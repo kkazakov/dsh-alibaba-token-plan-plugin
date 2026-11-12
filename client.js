@@ -117,8 +117,7 @@ window.__ModuleLoader__.load({
         dangerouslySetInnerHTML: {
           __html: `
 .atp-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 2px 2px 0; font-size: 11px; line-height: 1.4; color: var(--dsw-alias-label-secondary); }
-.atp-brand { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; color: var(--dsw-alias-label-primary); }
-.atp-dot { width: 7px; height: 7px; border-radius: 50%; background: #ff6a00; box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.16); }
+.atp-brand { font-weight: 600; color: var(--dsw-alias-label-primary); }
 .atp-meter { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
 .atp-label { white-space: nowrap; }
 .atp-track { position: relative; width: 46px; height: 4px; border-radius: 999px; overflow: hidden; background: var(--dsw-alias-bg-layer-2); border: 1px solid var(--dsw-alias-border-l1); }
@@ -339,7 +338,7 @@ window.__ModuleLoader__.load({
           'div',
           { className: 'atp-strip' },
           h(Styles, null),
-          h('span', { className: 'atp-brand' }, h('span', { className: 'atp-dot' }), 'Token Plan'),
+          h('span', { className: 'atp-brand' }, 'Token Plan'),
           h('span', null, state.status === 'loading' ? t('loading') : t('unavailable')),
         );
       }
@@ -353,7 +352,7 @@ window.__ModuleLoader__.load({
             title: state.error ?? payload.error ?? '',
           },
           h(Styles, null),
-          h('span', { className: 'atp-brand' }, h('span', { className: 'atp-dot' }), 'Token Plan'),
+          h('span', { className: 'atp-brand' }, 'Token Plan'),
           h('span', { className: 'atp-error' }, t('notConnected')),
         );
       }
@@ -374,7 +373,7 @@ window.__ModuleLoader__.load({
         'div',
         { className: 'atp-strip', 'data-component': 'alibaba-token-plan-strip' },
         h(Styles, null),
-        h('span', { className: 'atp-brand' }, h('span', { className: 'atp-dot' }), 'Token Plan'),
+        h('span', { className: 'atp-brand' }, 'Token Plan'),
         h(
           'span',
           {
