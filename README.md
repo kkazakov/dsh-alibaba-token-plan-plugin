@@ -50,6 +50,10 @@ models the provider is still `alibaba`, so **only the Alibaba strip shows** — 
 DeepSeek balance strip watches the provider, not the model name. The optional
 `providerExclude` list is a second guard for deployments that rename routes.
 
+Keep `showForAllProviders: false` on the DeepSeek balance row (the default) if
+you want this exclusivity: setting it to `true` deliberately opts that strip out
+of provider matching and makes it render beside the Alibaba strip.
+
 ## Requirements
 
 - DeepSeek Harness with the Web UI (Desktop, or a `web` profile).
