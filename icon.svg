@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Alibaba Token Plan monthly quota">
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#1a1208"/>
+  <circle cx="32" cy="29" r="15" fill="none" stroke="#4a2a12" stroke-width="6"/>
+  <path d="M32 14a15 15 0 0 1 13 7.5" fill="none" stroke="#ff6a00" stroke-width="6" stroke-linecap="round"/>
+  <path d="M45 21.5a15 15 0 0 1 2 7.5" fill="none" stroke="#ffb066" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="32" cy="29" r="4.5" fill="#ffd7b0"/>
+  <path d="M22 46h20" stroke="#ff6a00" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M26 52h12" stroke="#ff6a00" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+</svg>

@@ -1,0 +1,35 @@
+# Alibaba Cloud Token Plan bundle.
+# One Host row owns the polling, the `alibaba_token_plan_usage` tool, the optional
+# prompt notice, and the same-origin route the Client half reads.
+- insert:
+    - id: alibaba-token-plan
+      name: '@wasp/dsh-alibaba-token-plan'
+      config:
+        # Leave both empty to resolve the Aliyun AccessKey from the environment,
+        # then the Harness credential store, then ~/.dsh/.env, then ~/.aliyun/config.json.
+        # A Token Plan model key (sk-sp-...) cannot read plan usage; use a RAM
+        # user's AccessKey that can read the Model Studio subscription.
+        accessKeyId: ''
+        accessKeySecret: ''
+        securityToken: ''
+        # The Harness credential store. Empty means ~/.dsh/.credentials.yaml.
+        credentialsFile: ''
+        # Singapore / international Token Plan console (the token-plan endpoint).
+        openApiHost: 'modelstudio.ap-southeast-1.aliyuncs.com'
+        consoleRegion: 'ap-southeast-1'
+        consoleSite: 'MODELSTUDIO_ALBABACLOUD'
+        consoleDomain: 'modelstudio.console.alibabacloud.com'
+        # Backstop poll for the tool and the prompt notice; the page forces a
+        # fresh read on each of its own polls, so the strip stays current.
+        refreshSeconds: 300
+        warnPercent: 80
+        contextNotice: true
+        # The composer strip shows only while the selected model's provider id
+        # contains this substring. The profile's Alibaba route is `alibaba`.
+        providerMatch: 'alibaba'
+        # Extra guard: hide when the selected provider id contains one of these.
+        providerExclude: []
+        # Try the Token Plan OpenAPI for seat credits when the console reports a
+        # percentage only. Off when the account has no seat-based credits.
+        creditsFallback: true
+        creditRefreshSeconds: 900

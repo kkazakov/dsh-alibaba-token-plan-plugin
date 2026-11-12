@@ -1,0 +1,58 @@
+{
+  "name": "@wasp/dsh-alibaba-token-plan",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Alibaba Cloud Token Plan monthly usage in DeepSeek Harness: an ambient composer strip, a settings page, and an alibaba_token_plan_usage agent tool.",
+  "license": "MIT",
+  "author": "Krasimir Kazakov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkazakov/dsh-alibaba-token-plan-plugin.git"
+  },
+  "homepage": "https://github.com/kkazakov/dsh-alibaba-token-plan-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/kkazakov/dsh-alibaba-token-plan-plugin/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "alibaba",
+    "aliyun",
+    "bailian",
+    "token-plan",
+    "model-studio",
+    "usage",
+    "quota"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-model-selection",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

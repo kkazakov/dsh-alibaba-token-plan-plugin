@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Alibaba Token Plan",
+    "description": "Показва месечната квота на Alibaba Cloud Token Plan под полето за въвеждане и на отделна страница в настройките, и дава на агента инструмента alibaba_token_plan_usage."
+  }
+}

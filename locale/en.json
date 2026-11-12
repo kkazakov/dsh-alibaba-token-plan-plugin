@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Alibaba Token Plan",
+    "description": "Shows the Alibaba Cloud Token Plan monthly quota under the composer and on its own settings page, and gives the agent an alibaba_token_plan_usage tool."
+  }
+}
