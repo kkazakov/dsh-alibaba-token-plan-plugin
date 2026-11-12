@@ -83,32 +83,39 @@ Management with Administrator or Subscribe Plan permission.
 
 ## Install
 
-**Web (recommended).** Open the **Plugins** page in the sidebar, click
-**Add plugin**, and paste the package name:
+**This checkout (how it is installed in the current profile).** Give
+`plugin_manager` the absolute path of the checkout:
 
 ```
-@wasp/dsh-alibaba-token-plan
+/home/wasp/Projects/sandbox/dsh-alibaba-token-plan-plugin
 ```
 
-**From GitHub** instead of npm:
+It links the package into the profile (`link:`), selects the bundle, and applies
+its patch row. Installing runs the plugin **in-process with your permissions**;
+only install it from a source you trust.
+
+**From GitHub:**
 
 ```
 github:kkazakov/dsh-alibaba-token-plan-plugin
 ```
 
-**Agent / tool surface:** `plugin_manager` with `action: install_bundle` and the
-same spec, or the absolute path of a checkout.
+**From npm**, once the package is published:
 
-**From a checkout** (local development):
+```
+@wasp/dsh-alibaba-token-plan
+```
+
+The Web **Plugins → Add plugin** box accepts the published name or the GitHub
+spec.
+
+**Manual profile link** (local development) instead of `plugin_manager`:
 
 ```jsonc
 // ~/.dsh/profiles/<profile>/package.json
 "dependencies": { "@wasp/dsh-alibaba-token-plan": "link:/path/to/dsh-alibaba-token-plan-plugin" },
 "dsh": { "profile": { "bundles": [ /* … */ "@wasp/dsh-alibaba-token-plan" ] } }
 ```
-
-Installing runs the plugin **in-process with your permissions**. Only install it
-from a source you trust.
 
 ### Upgrading
 
